@@ -1,1 +1,126 @@
+\documentclass[a4paper]{book}
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
 
+\usepackage{color}
+\definecolor{light-gray}{rgb}{0.8,0.8,0.8}
+\setcounter{chapter}{2}
+\setcounter{section}{3}
+\setcounter{subsection}{2}
+\setcounter{equation}{12}
+
+\setcounter{page}{21}
+
+\begin{document}
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+and the top and bottom side lengths $a$ and $b$, what is the volume of this solid?
+(See also Problem 2.7.)\\
+
+{\bf Problem  2.11 Truncated cone}\\
+What is the volume of a truncated cone with a circular base of radius $r_1$ and circular top of radius $r_2$ (with the top parallel to the base)?  Generalize your formula to the volume of a truncated pyramid with height $h$, a base of an arbitrary shape and area $A_{base}$, and a corresponding top of area $A_{top}$.
+\end{minipage}
+} 
+\section{Fluid mechanics:  Drag} 
+The preceding examples showed that easy cases can check and construct formulas, but the examples can be done without easy cases (for example, with  calculus). For the next equations, from fluid mechanics, no exact solutions are known in general, so easy cases  and other street-fighting tools are almost the only way to make progress.\\
+
+\noindent Here then are the Navier–Stokes equations of fluid mechanics:
+\begin{equation}
+\frac{\partial{\bf v}}{\partial{t}} + (\bf v \cdot \nabla) \bf v = - \frac{1}{\rho} \nabla p + \gamma \nabla^2 \bf v,
+\end{equation}
+where {\bf v} is the velocity of the fluid (as a function of position and time), $\rho$ is its density, p is the pressure, and $\gamma$ is the kinematic viscosity.  These equations  describe  an  amazing  variety  of  phenomena  including  flight, tornadoes, and river rapids.\\
+Our example is the following home experiment on drag. Photocopy this page while magnifying it by a factor of 2; then cut out the following two templates:
+\newpage
+\noindent With each template, tape together the shaded areas to make a cone. The two resulting cones have the same shape, but the large cone has twice the height and width of the small cone.\\ 
+
+\noindent $\blacktriangleright$ {\it When the cones are dropped point downward, what is the approximate ratio of their terminal speeds (the speeds at which drag balances weight)?}\\ 
+
+\noindent The Navier–Stokes equations contain the answer to this question. Finding the terminal speed involves four steps.
+\begin{description}
+\newcounter{MYc}
+\def\MYhyp{\addtocounter{MYc}{1}\par{\bf Step \arabic{MYc}.~}}
+\item \MYhyp Impose boundary conditions. The conditions include the motion of the cone and the requirement that no fluid enters the paper.
+\item \MYhyp Solve the equations, together with the continuity equation $\nabla \cdot \bf v = 0$, in order to find the pressure and velocity at the surface of the cone.
+\item \MYhyp Use the pressure and velocity to find the pressure and velocity gradient at the surface of the cone; then integrate the resulting forces to find the net force and torque on the cone.
+\item \MYhyp Use the net force and torque to find the motion of the cone. This step is difficult because the resulting motion must be consistent with the motion assumed in step 1. If it is not consistent, go back to step 1, assume a different motion, and hope for better luck upon reaching this step.
+\end{description}
+Unfortunately, the Navier–Stokes equations are coupled and nonlinear partial-differential equations. Their solutions are known only in very simple cases: for example, a sphere moving very slowly in a viscous fluid, or a sphere moving at any speed in a zero-viscosity fluid. There is little hope of solving for the complicated flow around an irregular, quivering shape such as a flexible paper cone.\\
+
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+{\bf Problem 2.12 Checking dimensions in the Navier–Stokes equations}\\
+Check that the first three terms of the Navier–Stokes equations have identical dimensions.\\
+
+{\bf Problem 2.13 Dimensions of kinematic viscosity}\\
+From the Navier–Stokes equations, find the dimensions of kinematic viscosity {\it v}.
+\end{minipage}
+}
+\newpage
+\subsection{Using dimensions}
+Because a direct solution of the Navier–Stokes equations is out of the question, let’s use the methods of dimensional analysis and easy cases. A direct approach is to use them to deduce the terminal velocity itself. An indirect approach is to deduce the drag force as a function of fall speed and then to find the speed at which the drag balances the weight of the cones. This two-step approach simplifies the problem. It introduces only one new quantity (the drag force) but eliminates two quantities: the gravitational acceleration and the mass of the cone.\\
+
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+{\bf Problem 2.14 Explaining the simplification}\\
+Why is the drag force independent of the gravitational acceleration $g$ and of the
+cone’s mass $m$ (yet the force depends on the cone’s shape and size)?
+\end{minipage}
+}\\
+
+\noindent The principle of dimensions is that all terms in a valid equation have identical dimensions. Applied to the drag force $F$, it means that in the equation $F = f$ (quantities that affect $F$) both sides have dimensions of force. Therefore, the strategy is to find the quantities that affect $F$, find their dimensions, and then combine the quantities into a quantity with dimensions of force.\\
+
+\noindent $\blacktriangleright$ {\it On what quantities does the drag depend, and what are their dimensions?}\\ 
+
+\noindent
+\begin{minipage}[t]{65mm}
+The drag force depends on four quantities: two parameters of the cone and two parameters of the fluid (air). (For the dimensions of $\gamma$, see Problem 2.13.)
+\end{minipage}
+\hfill
+\begin{minipage}[t]{50mm}
+\begin{tabular}[t]{|c|l|l|}
+v & speed of the cone & $LT^{−1}$\\
+r & size of the cone & $L$\\
+$\rho$ & density of air & $ML^{−3}$\\
+$\gamma$ & viscosity of air & $L^2T^{−1}$\\
+\end{tabular}
+\end{minipage}\\
+\\
+
+\noindent $\blacktriangleright$ {\it Do any combinations of the four parameters
+v, r, $\rho$, and $\gamma$ have dimensions of force?}\\ 
+
+\noindent The next step is to combine v, r, $\rho$, and $\gamma$ into a quantity with dimensions
+of force. Unfortunately, the possibilities are numerous---for example,\\
+\begin{equation}
+F_1 = \rho v^2r^2,~~
+F_2 = \rho \gamma vr,
+\end{equation}\\
+or the product combinations $\sqrt{F_1F_2}$ and $F_1^2/F_2$. Any sum of these ugly products is also a force, so the drag force $F$ could be $\sqrt{F_1F_2}  + F_1^2/F_2$, 3$\sqrt{F_1F_2} - 2F_1^2/F_2$, or much worse.\\
+\newpage
+\noindent Narrowing the possibilities requires a method more sophisticated than simply guessing combinations with correct dimensions. To develop the sophisticated approach, return to the first principle of dimensions: All terms in an equation have identical dimensions. This principle applies to any statement about drag such as\\
+\begin{equation}
+A + B = C
+\end{equation}\\
+where the blobs $A$, $B$, and $C$ are functions of $F$, $v$, $r$, $\rho$, and $\gamma$.\\
+
+\noindent Although the blobs can be absurdly complex functions, they have identical dimensions. Therefore, dividing each term by $A$, which produces the equation\\
+\begin{equation}
+\frac{A}{A} +\frac{B}{A} = \frac{C}{A} ,
+\end{equation}\\
+
+\noindent makes each term dimensionless. The same method turns any valid equation into a dimensionless equation. Thus, any (true) equation describing the world can be written in a dimensionless form.\\
+
+\noindent Any dimensionless form can be built from dimensionless groups: from dimension\-less products of the variables. Because any equation describing the world can be written in a dimensionless form, and any dimensionless form can be written using dimensionless groups, any equation describing the world can be written using dimensionless groups.\\
+
+\noindent $\blacktriangleright$ {\it Is the free-fall example (Section 1.2) consistent with this principle?}\\ 
+
+\noindent Before applying this principle to the complicated problem of drag, try it in the simple example of free fall (Section 1.2). The exact impact speed of an object dropped from a height $h$ is $v = \sqrt{2gh}$, where $g$ is the gravitational acceleration. This result can indeed be written in the dimensionless form $v/\sqrt{gh} = \sqrt{2}$, which itself uses only the dimensionless group $v/\sqrt{gh}$. The new principle passes its first test.\\
+
+\noindent This dimensionless-group analysis of formulas, when reversed, becomes a method of synthesis. Let’s warm up by synthesizing the impact speed $v$. First, list the quantities in the problem; here, they are $v$, $g$, and $h$. Second, combine these quantities into dimensionless groups. Here, all dimensionless groups can be constructed just from one group. For that group, let’s choose $v^2/gh$ (the particular choice does not affect the conclusion). Then the only possible dimension\-less statement is
+\end{document}
