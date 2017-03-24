@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 int main()
 {
@@ -9,7 +8,6 @@ int main()
 	scanf("%f+i%f %f+i%f", &a, &b, &c, &d);
 	z = (a*a*c + a*c*c + a*d*d + c*b*b) / ((b + d)*(b + d) + (a + c)*(a + c));
 	m = (a*a*d + c*c*b + b*b*d + b*d*d) / ((b + d)*(b + d) + (a + c)*(a + c));
-	printf("=%.4f + i%.4f", z, m);
-	_getch();
+	printf("=%.4f + i%.4f\n", z, m);
 	return 0;
 }
