@@ -16,6 +16,5 @@ int main()
 		C = C + k;
 	} 
 	while (C <= t2);
-	_getch();
 	return 0;
 }
