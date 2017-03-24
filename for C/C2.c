@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 int main()
 {
 	int day = 5;
@@ -8,7 +7,6 @@ int main()
 	int none = day;
 	day = month;
 	month = none;
-	printf("0%i.0%i", day, month);
-	_getch();
+	printf("0%i.0%i\n", day, month);
 	return 0;
 }
