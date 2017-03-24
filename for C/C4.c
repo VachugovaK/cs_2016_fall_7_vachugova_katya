@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 #define swap(t,x,y){t; c=a; a = b; b = c;}
 int main()
@@ -12,6 +11,5 @@ int main()
 	scanf("%i", &b);
 	swap(c, a, b);
 	printf("x=%i y=%i\n", a, b);
-	_getch();
 	return 0;
 }
