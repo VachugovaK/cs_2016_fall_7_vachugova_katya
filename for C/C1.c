@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <conio.h>
 int main()
 {
 	printf("Hello Arteni!\n");
-	_getch();
 	return 0;
 }
