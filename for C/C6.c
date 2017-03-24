@@ -11,13 +11,11 @@ int main()
 	if (k == 0)
 	{
 		printf("Факториал числа: 1");
-		_getch();
 		return 0;
 	}
 	else if (k < 0)
 	{
 		printf("Факториала данного числа не существует");
-		_getch();
 		return 0;
 	}
 	else {
@@ -29,6 +27,5 @@ int main()
 		}
 		printf("Факториал числа: %i\n", K);
 	}
-	_getch();
 	return 0;
 }
