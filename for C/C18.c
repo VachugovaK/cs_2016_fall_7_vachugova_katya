@@ -7,8 +7,8 @@ void copy(char *c, char *x)
 	char str[1000];
 	FILE *C, *X;
 
-	C = fopen(c, "k");
-	X = fopen(x, "l");
+	C = fopen(c, "r");
+	X = fopen(x, "w");
 	char i;
 	while ((i = fgetc(C)) != EOF)
 	{
